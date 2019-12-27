@@ -1,5 +1,4 @@
 import React from 'react';
-import logo, { ReactComponent } from './logo.svg';
 import './App.css';
 import marked from 'marked';
 
@@ -58,67 +57,63 @@ marked.setOptions({
 
 
 class App extends React.Component{ 
-  
 
   constructor(props){
     super(props);
     this.state = {
       msg : placeholder
-    }
+    };
+    this.handleTextAreaChange = this.handleTextAreaChange.bind(this);
+  }
+
+  handleTextAreaChange(event) {
+    this.setState({
+      msg: event.target.value
+    });    
   }
 
   render(){
     return (
-      <div className="App">
-        <TextEditorWindow msg="First window" msg={this.state.msg} />
-        <PreviewWindow msg="Second window" msg={ marked(this.state.msg)}/>
+      <div>
+        <div className="App">
+          <TextEditorWindow msg={this.state.msg} handleTextAreaChange={this.handleTextAreaChange}/>          
+          <PreviewWindow msg={this.state.msg} />
+        </div>
+        <footer>Created by Sebastian Tysler</footer>
       </div>
     );
   }  
+
 }
+
 
 function WindowHeader(props) {
   return <div className="window-header">{props.title}</div>;
 }
 
-class TextEditorWindow extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      msg : props.msg
-    }
-  }
 
-  render(){
-    return (
-      <div>
-        <WindowHeader title="Text Editor"/>
-        <div className="window-content">
-          <textarea id="editor" value={this.state.msg} cols="50" rows="20">
-          </textarea>
-        </div>
+function TextEditorWindow(props){
+  return (
+    <div className="window">
+      <WindowHeader title="Text Editor"/>
+      <div className="window-content" id="editor-content">
+        <textarea id="editor" value={props.msg} cols="50" rows="20" onChange={props.handleTextAreaChange} >
+        </textarea>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
-class PreviewWindow extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      msg : props.msg
-    }
-  }
 
-  render(){
-    return (
-      <div>
-        <WindowHeader title="Previewer"/>
-        <TextPreview msg={this.props.msg}/>
-      </div>
-    );
-  }
+function PreviewWindow(props){
+  return (
+    <div className="window">
+      <WindowHeader title="Previewer"/>
+      <TextPreview msg={marked(props.msg)}/>
+    </div>
+  );  
 }
+
 
 function TextPreview(props){
     return (
