@@ -8,12 +8,14 @@
 }
 
 .window{
-  display: inline-block;
+  display: flex;
+  flex-flow: column;
   border: 0.1rem solid black;
   margin: 1rem;
   width: 45vw;
   height: 100%;
   box-sizing: border-box;
+  
 }
 
 #editor-content{
@@ -33,7 +35,7 @@
 
 .window-content{
   padding: 1rem 2rem;
-  height: calc(100% - 2rem);
+  height: 100%;
   box-sizing: border-box;
   overflow: auto;
 
