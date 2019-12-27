@@ -8,7 +8,7 @@ const placeholder =
 ## This is a sub-heading...
 ### And here's some other cool stuff:
   
-Heres some code, \`<div></div>\`, between 2 backticks.
+Here is some code, \`<div></div>\`, between 2 backticks.
 
 \`\`\`
 // this is multi-line code:
@@ -79,7 +79,7 @@ class App extends React.Component{
           <TextEditorWindow msg={this.state.msg} handleTextAreaChange={this.handleTextAreaChange}/>          
           <PreviewWindow msg={this.state.msg} />
         </div>
-        <footer>Created by Sebastian Tysler</footer>
+        <footer>Created by Sebastian Tysler 2020&copy;</footer>
       </div>
     );
   }  
