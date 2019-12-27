@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Overpass&display=swap');
 
 html{
-  --color-1: #cfeffa;
-  --color-2: #353D40;
-  --color-3: #6A7A80;
+  --color-1: #309FA8;
+  --color-2: #123C40;
+  --color-3: #257880;
 }
 
 body{
@@ -18,13 +18,13 @@ body{
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: flex-start;
-  height: calc(100vh - 3rem);
+  height: calc(100vh - 4rem);
 }
 
 .window{
   display: flex;
   flex-flow: column;
-  border: 0.1rem solid #353D40;
+  border: 0.1rem solid var(--color-2);
   margin: 1rem;
   width: 45vw;
   height: 100%;
@@ -39,14 +39,14 @@ body{
 }
 
 .window-header{
-  border-bottom: 1px solid #353D40;
+  border-bottom: 0.1rem solid var(--color-2);
   padding: 0.3rem;
   text-align: center;
-  background-color: #BEDCE6;
+  background-color: rgba(255,255,255,0.2);
   font-weight: bold;
   text-transform: uppercase;
-  text-shadow: 0.1rem 0.1rem 0.3rem rgb(255, 255, 255);
-  box-shadow: inset 0rem 0rem 0.6rem 0rem rgba(0, 0, 0, 0.3);  
+  color: rgba(255, 255, 255,0.9);
+  text-shadow: 0.1rem 0.1rem 0.3rem #123C40;
 }
 
 .window-content{
@@ -104,7 +104,14 @@ footer{
   position: fixed;
   bottom: 0;
   width: 100%;
-  box-shadow: inset 0rem 0.2rem 0.7rem 0rem rgba(255, 255, 255, 0.3);
+  padding: 0.2rem;
+  border-top: 0.1rem solid var(--color-2)
 }
 
 
+@media (orientation: portrait) {
+  .window{
+    width: 90vw;
+    height: calc(50vh - 3rem);
+  }
+}
