@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://teslasoftware.github.io/markdown-previewer/",
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
     "marked": "^4.0.10",
